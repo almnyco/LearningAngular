@@ -1,0 +1,51 @@
+<div>
+  Home works!
+  <br />
+
+  <!-- Utilizando props de outro component -->
+  <h1>{{ customInputProp }}</h1>
+  <br />
+
+  <!-- Utilizando props de outro component -->
+  <h1>{{ customInputProp }}</h1>
+  <br />
+
+  <!-- Utilizando variáveis do .ts -->
+  variável: {{ booleanState }}
+  <br />
+
+  <!-- Variáveis em atributos simples (HTML) -->
+  <button id="{{ buttonId }}">simples, {{ booleanState }}</button>
+  <br />
+
+  <!-- Variáveis em atributos dinâmicas (custom) -->
+  <button [attr.aria-label]="buttonId">custom</button>
+  <br />
+
+  <!-- Injeção de funções -->
+  <button (click)="simpleFunction()">submit simple</button>
+  <br />
+  <!-- Injeção de funções com parâmetros -->
+  <button (click)="updateBooleanState(!booleanState)">update state</button>
+  <br />
+  <!-- Injeção de funções com eventos -->
+  <button (click)="getEvent($event)">get event</button>
+  <br />
+
+  <!-- Condicionais -->
+  @if (shouldShowTitle) {
+  <h1>Título</h1>
+  } @else { }
+  <!-- Ou -->
+  <h1 *ngIf="shouldShowTitle">Título</h1>
+
+  <!-- Loops -->
+  <ul>
+    @for (item of items; track item) {
+    <li>{{ item }}</li>
+    }
+    <br />
+    <!-- Ou -->
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+</div>
